@@ -1,16 +1,14 @@
-function RollDice(number){
-    for (let roll in number){
-      dice = Math.floor(Math.random())*6+1;
-      document.querySelector("#target").innerHTML = "Roll: " + dice;
-      const values = []
-      values.push(dice);
-      let sum = 0;
-      values.forEach(value => sum += value);
-    return  document.querySelector("#target").innerHTML = "Sum of rolls: " + sum;
-}
+function RollDice (rolls){
+  let values = [];
+  for (let roll = 0; roll < rolls; roll++){
+    let dice = Math.floor(Math.random()*6+1);
+    values.push(dice);
+    let sum_values = values.reduce((acc, val) => acc + val, 0);
+  document.querySelector("#target").innerHTML = "The dice values are: " + values + "The sum of dices are: " + sum_values;
+  }
 }
 
-const question = parseInt(prompt("How many times to roll the dice?"));
-RollDice(question)
+let question = parseInt(prompt("How many times to roll the dice?"));
+RollDice(question);
 
 
