@@ -6,10 +6,13 @@ function SquareRoot(number){
 
 const question = confirm("Do you want to calculate the square root?");
 switch (question){
-  case true:
+  case true: {
     number = parseInt(prompt("Give me a number, I'll give you it's square root:"));
     SquareRoot(number)
     break
+    }
+
+
   case false:
     document.querySelector("#target").innerHTML = "The square root is not calculated.";
 }
